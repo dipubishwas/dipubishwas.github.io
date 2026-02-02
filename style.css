@@ -56,12 +56,40 @@ nav {
     transition: all 0.3s ease;
 }
 
-/* Mobile Menu Styles */
+/* Mobile Styles */
 @media (max-width: 768px) {
-    .hamburger {
-        display: flex;
+    
+    /* 1. Make the Top Bar Transparent */
+    nav {
+        background: transparent; /* Removes white background */
+        box-shadow: none;        /* Removes the bar shadow */
     }
 
+    /* 2. Transparent 3-Bar Button */
+    .hamburger {
+        display: flex;
+        opacity: 0.7;       /* Makes the button slightly transparent */
+        background: rgba(255, 255, 255, 0.2); /* Optional: tiny background box */
+        padding: 5px;       /* Space for the tiny background */
+        border-radius: 5px; /* Round corners for the button */
+    }
+    
+    /* Ensure bars are visible (Optional: change to white if background is dark) */
+    .hamburger .bar {
+        background-color: #333; /* Keep dark, or change to white if needed */
+    }
+
+    /* 3. Hero Section Shadows */
+    .hero h1, 
+    .hero p {
+        text-shadow: 0 5px 15px rgba(0, 0, 0, 0.7); /* Strong shadow for text */
+    }
+
+    .hero-btn {
+        box-shadow: 0 10px 20px rgba(0,0,0,0.4); /* Stronger shadow for button */
+    }
+
+    /* 4. Dropdown Menu (Right Aligned & Transparent) */
     .nav-links {
         display: none;
         position: absolute;
@@ -69,17 +97,15 @@ nav {
         right: 0;
         width: 100%;
 
-        /* 1. Transparent Background (Semi-transparent white) */
-        background-color: rgba(255, 255, 255, 0.85); /* Lower 0.85 to make it more transparent */
-        backdrop-filter: blur(8px); /* Adds a blur/glass effect */
+        /* Transparent Background */
+        background-color: rgba(255, 255, 255, 0.85); 
+        backdrop-filter: blur(8px); 
 
         flex-direction: column;
-
-        /* 2. Align text to the Right */
-        align-items: flex-end; 
-        padding-right: 30px; /* Adds space from the right edge */
+        align-items: flex-end; /* Right Align */
+        padding-right: 30px;
         
-        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         padding-top: 20px;
         padding-bottom: 20px;
     }
@@ -90,11 +116,10 @@ nav {
 
     .nav-links li {
         margin: 15px 0; 
-        width: 100%; /* Takes full width */
-        text-align: right; /* Text aligns to the right */
+        width: 100%; 
+        text-align: right; 
     }
 }
-
 /* --- HERO SECTION --- */
 .hero {
     background: linear-gradient(rgba(0, 95, 115, 0.6), rgba(0, 95, 115, 0.6)), url('cover.jpg');
